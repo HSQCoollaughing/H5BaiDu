@@ -1,0 +1,169 @@
+html, body {
+    width: 100%;
+    min-height: 100%; /*当页面的高度不足一屏幕的时候，我们让其最小也需要是一屏幕才可以*/
+    background: url("../img/baiduImg/timg.jpg") no-repeat;
+    background-size: cover; /*设置背景图片的大小：按照当前图片最适合的比例铺满整个页面*/
+}
+
+/*--导航--*/
+.nav {
+    /*暂时不用写样式：宽度不写默认就是100% 高度我们可以让其里面的子元素把它撑开*/
+}
+
+.nav ul {
+    float: right;
+    margin-right: 10px;
+    /*让整个列表区域整体靠右：我们设置了向右浮动，但是子元素一但设置了浮动，父元素的高度就不能被子元素的高度撑开了(浮动的BUG) =>这种情况下我们需要清除浮动的问题：给父元素增加一个叫做clear的样式类名即可(这个样式类名是在我们RESET.MIN.CSS中写好的)*/
+}
+
+.nav ul li {
+    float: left; /*设置向左浮动，让所有的LI在同一行*/
+}
+
+.nav ul li a {
+    display: block;
+    padding: 0 10px; /*我们设置PADDING来撑开每一个A标签,但是不给A设置宽度,这样可以保证：每一项之间间距相同,宽度是根据内容来自调整的*/
+    line-height: 36px;
+
+    color: #FFF;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav ul li a.noLine {
+    /*
+     * a.noLine：先获取所有的A,在所有的A中找到具有noLine样式的 => "同级查找"
+     * a .noLine：获取A所有后代元素中具有noLine样式的元素 => "后代查找"
+     */
+    text-decoration: none;
+}
+
+.nav ul li a.noBold {
+    font-weight: normal;
+}
+
+.nav ul li a.split {
+    color: #EEE;
+}
+
+/*--搜索--*/
+.search {
+    margin: 50px auto 0; /*距离上边是50PX间距,左右是水平居中*/
+    width: 614px;
+}
+
+.search h1 {
+    margin: 0 auto 10px;
+    width: 244px;
+    height: 105px;
+    font-size: 0; /*隐藏区域中的文字*/
+}
+
+.search h1 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.search .textInp {
+    float: left;
+    width: 488px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 10px;
+    border: 1px solid #DDD;
+    background: rgba(255, 255, 255, 0.8); /*RGBA:设置背景颜色的透明度,他是RGB+OPACITY =>在IE低版本浏览器中不兼容*/
+    font-size: 14px;
+}
+
+.search .submitInp {
+    float: left;
+    width: 104px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: none;
+
+    color: #FFF;
+    font-size: 16px;
+    background: #38F;
+    cursor: pointer; /*鼠标滑过,鼠标箭头是小手形状的,代表当前的元素是可以点击的*/
+}
+
+.search .submitInp:hover {
+    background: orange;
+}
+
+/*--图片--*/
+.imgBox {
+    margin: 50px auto 0;
+    padding-bottom: 10px;
+    width: 860px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.imgBox ul {
+
+}
+
+.imgBox ul li {
+    float: left;
+    margin: 10px 0 0 10px;
+}
+
+.imgBox ul li a {
+    display: block;
+    position: relative;
+    width: 160px;
+    height: 140px;
+    overflow: hidden; /*溢出隐藏：当图片放大的时候，图片会超出A的范围，我们把超出的部分隐藏起来*/
+}
+
+.imgBox ul li a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*img标签比较的特殊：它虽然是行内标签，但是也具备一些块状的特性，但是如果不设置宽度和高度，它会按照图片本身的宽高来渲染，这样可能导致图片比容器要宽*/
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.imgBox ul li a span {
+    position: absolute; /*绝对定位：相对于当前容器A定位的(因为我们给A加了position: relative)*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: bold;
+    text-indent: 10px; /*首行缩进10PX*/
+
+    background: -webkit-linear-gradient(top, rgba(121, 104, 72, 0), rgba(121, 104, 72, 1));
+    background: -moz-linear-gradient(top, rgba(121, 104, 72, 0), rgba(121, 104, 72, 1));
+    background: -ms-linear-gradient(top, rgba(121, 104, 72, 0), rgba(121, 104, 72, 1));
+    background: -o-linear-gradient(top, rgba(121, 104, 72, 0), rgba(121, 104, 72, 1));
+    background: linear-gradient(top, rgba(121, 104, 72, 0), rgba(121, 104, 72, 1));
+    /*
+     *把一个行内标签变为块状标签，我们有很多办法：
+     * 1、display:block;
+     * 2、设置浮动后也可以变为块状标签float:left/right
+     * 3、设置定位position: absolute;
+     * 第一种设置完成后，当前元素可以独占一行，不写宽度的话，它的宽度是100%；而后两种不写宽度，宽度为内容撑开的宽度；
+    */
+}
+
+.imgBox ul li a:hover img { /*鼠标滑过A的时候,让A下面的IMG拥有下列样式*/
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+
+    transform-origin: preserve-3d;
+}

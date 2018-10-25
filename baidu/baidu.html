@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训-百度图片案例</title>
+
+    <!--import css-->
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/baidu.css"/>
+</head>
+<body>
+<!--导航  快捷键：nav.nav>ul>li*14>a [TAB]-->
+<nav class="nav clear">
+    <ul class="clear">
+        <li><a href="https://www.baidu.com/">网页</a></li><!--正常情况下,HREF中放入哪一个地址,我们点击的时候就跳转到哪一个页面-->
+        <li><a href="">新闻</a></li>
+        <li><a href="">贴吧</a></li>
+        <li><a href="">知道</a></li>
+        <li><a href="">音乐</a></li>
+        <li><a href="">视频</a></li>
+        <li><a href="javascript:;" class="noLine">图片</a></li>
+        <!--HREF中加入的是javascript:; 他的意思是阻止A标签跳转页面的默认行为,加上他以后,点击A标签页面就可以不跳转了-->
+        <li><a href="">地图</a></li>
+        <li><a href="">文库</a></li>
+        <li><a href="javascript:;" class="noLine noBold split">|</a></li>
+        <li><a href="" class="noBold">百度首页</a></li>
+        <li><a href="javascript:;" class="noBold">登录</a></li>
+        <li><a href="" class="noBold">注册</a></li>
+        <li><a href="javascript:;" class="noBold">收藏本页</a></li>
+    </ul>
+</nav>
+
+<!--搜索-->
+<section class="search">
+    <!--疑问：我们放置的图片中已经有百度图片四个文字了,为什么自己还要加这几个文字?
+      SEO搜索引擎优化：通过一系列的手段，当别人在百度或者谷歌等地方输入关键词进行搜索的时候，能够搜索到我们的网站，排名越靠前越好
+      SEM竞价排名：我们针对一些关键词进行竞价排名，一般谁的钱多，谁就排在前面
+
+      图片不能做SEO的推广,为了做品牌推广,我们一般把LOGO标题写在H1中(因为H1的权重高),而且不管图片上是否有文字,我们单独写LOGO文字(这个文字不给用户的看得话,可以在样式中把文字隐藏,但是这段文字有利于SEO推广)
+    -->
+    <h1><img src="img/baiduImg/logoBaidu.png" alt="">百度图片</h1>
+
+    <div class="clear">
+        <!--input:text、password、radio、checkbox、button、submit、reset、(email、tel、number、search、url、range、color、date =>HTML5中新增加的类型,在IE低版本浏览器中不兼容)、file、hidden...-->
+        <input type="text" class="textInp"/>
+        <input type="button" value="百度一下" class="submitInp"/>
+    </div>
+</section>
+
+<!--图片 快捷键：section.imgBox>ul>li*10>a>img+span [TAB]-->
+<section class="imgBox">
+    <ul class="clear">
+        <li><a href="">
+            <img src="img/baiduImg/1.jpg" alt="">
+            <span>PPT模板</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/2.jpg" alt="">
+            <span>宠物</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/3.jpg" alt="">
+            <span>高清动漫</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/4.jpg" alt="">
+            <span>微距摄影</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/5.jpg" alt="">
+            <span>多肉植物</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/6.jpg" alt="">
+            <span>头像</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/7.jpg" alt="">
+            <span>风景</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/8.jpg" alt="">
+            <span>小清新</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/9.jpg" alt="">
+            <span>星空</span>
+        </a></li>
+        <li><a href="">
+            <img src="img/baiduImg/10.jpg" alt="">
+            <span>美女明星</span>
+        </a></li>
+    </ul>
+</section>
+</body>
+</html>
